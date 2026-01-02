@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./ui/Home";
 import Menu from "./features/menu/Menu";
@@ -16,11 +16,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <div>
-      <h1>Swift Pizza Pie Co.</h1>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
