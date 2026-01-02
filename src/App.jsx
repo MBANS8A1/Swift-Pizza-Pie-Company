@@ -2,11 +2,16 @@ import { useState } from "react";
 import { createBrowserRouter } from "react-router";
 import "./index.css";
 import Home from "./ui/Home";
+import Menu from "./features/menu/Menu";
 
-createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/menu",
+    element: <Menu />,
   },
 ]);
 
