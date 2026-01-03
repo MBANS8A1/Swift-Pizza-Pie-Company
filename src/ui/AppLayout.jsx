@@ -1,5 +1,12 @@
+import Header from "./Header";
+
 function AppLayout() {
-  return <div></div>;
+  return (
+    <div>
+      <Header />
+      <main></main>
+    </div>
+  );
 }
 
 export default AppLayout;
