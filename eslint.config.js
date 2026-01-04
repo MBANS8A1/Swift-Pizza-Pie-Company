@@ -19,7 +19,7 @@ export default defineConfig([
       "no-unused-vars": "warn",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
-      "react/jsx-key": "off",
+      "react/jsx-key": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
     },
