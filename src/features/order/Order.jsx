@@ -8,7 +8,7 @@ import {
 
 const order = {
   id: "ABCDEF",
-  customer: "Jonas",
+  customer: "Sean",
   phone: "123456789",
   address: "Arroios, Lisbon , Portugal",
   priority: true,
