@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Form } from "react-router-dom";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -38,7 +39,7 @@ function CreateOrder() {
     <div>
       <h2>Ready to order? Let&#39s go!</h2>
 
-      <form>
+      <Form>
         <div>
           <label>First Name</label>
           <input type="text" name="customer" required />
@@ -66,13 +67,15 @@ function CreateOrder() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority">
+            Do you want to give your order priority?
+          </label>
         </div>
 
         <div>
           <button>Order now</button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 }
