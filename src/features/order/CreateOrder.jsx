@@ -63,7 +63,12 @@ function CreateOrder() {
         <div>
           <label>Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input
+              className="rounded-full border border-stone-200 px-4 py-2"
+              type="text"
+              name="address"
+              required
+            />
           </div>
         </div>
 
