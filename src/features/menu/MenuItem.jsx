@@ -11,8 +11,10 @@ function MenuItem({ pizza }) {
         className={`h-24 ${soldOut ? 'opacity-70 grayscale' : ''}`}
       />
       <div className="flex flex-col">
-        <p>{name}</p>
-        <p>{ingredients.join(', ')}</p>
+        <p className="font-medium">{name}</p>
+        <p className="text-sm text-stone-500 capitalize italic">
+          {ingredients.join(', ')}
+        </p>
         <div className="mt-auto">
           {!soldOut ? (
             <p className="text-sm">{formatCurrency(unitPrice)}</p>
