@@ -1,3 +1,4 @@
+import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
 
 function MenuItem({ pizza }) {
@@ -15,7 +16,7 @@ function MenuItem({ pizza }) {
         <p className="text-sm text-stone-500 capitalize italic">
           {ingredients.join(', ')}
         </p>
-        <div className="mt-auto">
+        <div className="mt-auto flex items-center justify-between">
           {!soldOut ? (
             <p className="text-sm">{formatCurrency(unitPrice)}</p>
           ) : (
@@ -23,6 +24,7 @@ function MenuItem({ pizza }) {
               Sold out
             </p>
           )}
+          <Button>Add to cart</Button>
         </div>
       </div>
     </li>
