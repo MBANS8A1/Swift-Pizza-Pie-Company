@@ -6,11 +6,11 @@ function CartItem({ item }) {
 
   return (
     <li className="py-3">
-      <p>
+      <p className="mb-1">
         {quantity}&times; {name}
       </p>
       <div className="flex items-center justify-between">
-        <p>{formatCurrency(totalPrice)}</p>
+        <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
         <Button type="small">Delete</Button>
       </div>
     </li>
