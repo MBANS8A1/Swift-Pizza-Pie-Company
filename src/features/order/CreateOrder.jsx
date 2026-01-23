@@ -50,7 +50,7 @@ function CreateOrder() {
 
       {/* <Form method="POST" action="/order/new"> */}
       <Form method="POST">
-        <div>
+        <div className="mb-5 flex gap-2">
           <label>First Name</label>
           <input className="input" type="text" name="customer" required />
         </div>
