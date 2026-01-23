@@ -59,8 +59,8 @@ function CreateOrder() {
           <label className="sm:basis-40">Phone number</label>
           <div>
             <input className="input" type="tel" name="phone" required />
+            {formErrors?.phone && <p>{formErrors.phone}</p>}
           </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
