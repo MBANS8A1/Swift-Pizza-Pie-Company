@@ -57,16 +57,21 @@ function CreateOrder() {
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">Phone number</label>
-          <div>
-            <input className="input" type="tel" name="phone" required />
+          <div className="grow">
+            <input className="input w-full" type="tel" name="phone" required />
             {formErrors?.phone && <p>{formErrors.phone}</p>}
           </div>
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">Address</label>
-          <div>
-            <input className="input" type="text" name="address" required />
+          <div className="grow">
+            <input
+              className="input w-full"
+              type="text"
+              name="address"
+              required
+            />
           </div>
         </div>
 
