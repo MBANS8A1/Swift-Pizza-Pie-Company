@@ -59,7 +59,9 @@ function CreateOrder() {
           <label className="sm:basis-40">Phone number</label>
           <div className="grow">
             <input className="input w-full" type="tel" name="phone" required />
-            {formErrors?.phone && <p>{formErrors.phone}</p>}
+            {formErrors?.phone && (
+              <p className="mt-2 text-xs text-red-700">{formErrors.phone}</p>
+            )}
           </div>
         </div>
 
