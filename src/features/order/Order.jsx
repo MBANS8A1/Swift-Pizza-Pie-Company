@@ -61,7 +61,9 @@ function Order() {
             Price priority: {formatCurrency(priorityPrice)}
           </p>
         )}
-        <p>To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}</p>
+        <p className="font-bold">
+          To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
+        </p>
       </div>
     </div>
   );
