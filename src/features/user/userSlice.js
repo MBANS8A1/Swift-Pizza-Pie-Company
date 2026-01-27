@@ -26,7 +26,7 @@ async function fetchAddress() {
   */
 
 const initialState = {
-  userName: 'Alex',
+  userName: '',
 };
 
 const userSlice = createSlice({
@@ -39,5 +39,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { userName } = userSlice.actions;
+export const { updateName } = userSlice.actions;
 export default userSlice.reducer;
