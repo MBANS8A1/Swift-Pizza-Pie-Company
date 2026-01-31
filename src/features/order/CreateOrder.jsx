@@ -3,8 +3,9 @@ import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 import { createOrder } from '../../services/apiRestaurant';
 import Button from '../../ui/Button';
 import { useSelector } from 'react-redux';
-import { getCart } from '../cart/cartSlice';
+import { clearCart, getCart } from '../cart/cartSlice';
 import EmptyCart from '../cart/EmptyCart';
+import store from '../../store';
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -110,6 +111,8 @@ export async function action({ request }) {
 
   /*If all required Form data is supplied and is valid (without errors), then an API POST request is made to create a new order and the customer will be redirected.*/
   const newOrder = await createOrder(order);
+
+  store.dispatch(clearCart());
 
   return redirect(`/order/${newOrder.id}`);
 }
