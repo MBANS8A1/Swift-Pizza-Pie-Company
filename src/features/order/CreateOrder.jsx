@@ -15,13 +15,13 @@ const isValidPhone = (str) =>
   );
 
 function CreateOrder() {
+  const [withPriority, setWithPriority] = useState(false);
   const userName = useSelector((state) => state.user.userName);
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
 
   const formErrors = useActionData();
 
-  // const [withPriority, setWithPriority] = useState(false);
   const cart = useSelector(getCart);
   const totalCartPrice = useSelector(getTotalCartPrice);
   const priorityPrice = 0;
