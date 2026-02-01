@@ -34,10 +34,6 @@ function CreateOrder() {
         Ready to order? Let&#39;s go!
       </h2>
 
-      <button onClick={() => dispatch(fetchAddress())} type="button">
-        Get Position
-      </button>
-
       {/* <Form method="POST" action="/order/new"> */}
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -73,6 +69,9 @@ function CreateOrder() {
               required
             />
           </div>
+          <Button onClick={() => dispatch(fetchAddress())} type="button">
+            Get Position
+          </Button>
         </div>
 
         <div className="mb-12 flex items-center gap-5">
