@@ -23,6 +23,7 @@ export const fetchAddress = createAsyncThunk(
 
     // 3) Then we return an object with the data that we are interested in.
     //This data returned here will become the payload for the fulfilled status from createAsyncThunk()
+
     return { position, address };
   },
 );
@@ -47,12 +48,12 @@ const userSlice = createSlice({
       .addCase(fetchAddress.pending, (state, action) => {
         state.status = 'loading';
       })
-      .builder.addCase(fetchAddress.fulfilled, (state, action) => {
+      .addCase(fetchAddress.fulfilled, (state, action) => {
+        state.status = 'idle';
         state.position = action.payload.position;
         state.address = action.payload.address;
-        state.status = 'idle';
       })
-      .builder.addCase(fetchAddress.rejected, (state, action) => {
+      .addCase(fetchAddress.rejected, (state, action) => {
         state.status = 'error';
         action.error.message;
       }),
