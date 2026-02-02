@@ -33,6 +33,7 @@ const initialState = {
   status: 'idle',
   position: {},
   address: '',
+  error: '',
 };
 
 const userSlice = createSlice({
@@ -55,7 +56,7 @@ const userSlice = createSlice({
       })
       .addCase(fetchAddress.rejected, (state, action) => {
         state.status = 'error';
-        action.error.message;
+        state.error = action.error.message;
       }),
 });
 

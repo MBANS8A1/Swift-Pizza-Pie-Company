@@ -23,6 +23,7 @@ function CreateOrder() {
     status: addressStatus,
     position,
     address,
+    error: errorAddress,
   } = useSelector((state) => state.user);
   const isLoadingAddress = addressStatus === 'loading';
   const navigation = useNavigation();
@@ -76,6 +77,11 @@ function CreateOrder() {
               defaultValue={address}
               required
             />
+            {addressStatus === 'error' && (
+              <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+                {errorAddress}
+              </p>
+            )}
           </div>
           {!position.latitude && !position.longitude && (
             <span className="absolute right-0.75 z-30">
