@@ -24,6 +24,7 @@ function CreateOrder() {
     position,
     address,
   } = useSelector((state) => state.user);
+  const isLoadingAddress = addressStatus === 'loading';
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
   const formErrors = useActionData();
@@ -71,6 +72,7 @@ function CreateOrder() {
               className="input w-full"
               type="text"
               name="address"
+              disabled={isLoadingAddress}
               required
             />
           </div>
@@ -81,8 +83,9 @@ function CreateOrder() {
                 dispatch(fetchAddress());
               }}
               type="small"
+              disabled={isLoadingAddress}
             >
-              Get Position
+              {isLoadingAddress ? 'Fetching Position...' : 'Get Position'}
             </Button>
           </span>
         </div>
