@@ -70,7 +70,13 @@ function CreateOrder() {
             />
           </div>
           <span className="absolute right-0.75 z-30">
-            <Button onClick={() => dispatch(fetchAddress())} type="small">
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(fetchAddress());
+              }}
+              type="small"
+            >
               Get Position
             </Button>
           </span>
