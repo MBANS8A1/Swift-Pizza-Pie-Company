@@ -73,21 +73,24 @@ function CreateOrder() {
               type="text"
               name="address"
               disabled={isLoadingAddress}
+              defaultValue={address}
               required
             />
           </div>
-          <span className="absolute right-0.75 z-30">
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(fetchAddress());
-              }}
-              type="small"
-              disabled={isLoadingAddress}
-            >
-              {isLoadingAddress ? 'Fetching Position...' : 'Get Position'}
-            </Button>
-          </span>
+          {!position.latitude && !position.longitude && (
+            <span className="absolute right-0.75 z-30">
+              <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(fetchAddress());
+                }}
+                type="small"
+                disabled={isLoadingAddress}
+              >
+                {isLoadingAddress ? 'Fetching Position...' : 'Get Position'}
+              </Button>
+            </span>
+          )}
         </div>
 
         <div className="mb-12 flex items-center gap-5">
