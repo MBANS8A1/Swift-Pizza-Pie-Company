@@ -59,7 +59,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+        <div className="relative mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">Address</label>
           <div className="grow">
             <input
@@ -69,9 +69,11 @@ function CreateOrder() {
               required
             />
           </div>
-          <Button onClick={() => dispatch(fetchAddress())} type="button">
-            Get Position
-          </Button>
+          <span className="absolute right-0.75 z-30">
+            <Button onClick={() => dispatch(fetchAddress())} type="small">
+              Get Position
+            </Button>
+          </span>
         </div>
 
         <div className="mb-12 flex items-center gap-5">
