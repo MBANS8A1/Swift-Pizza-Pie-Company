@@ -84,7 +84,7 @@ function CreateOrder() {
             )}
           </div>
           {!position.latitude && !position.longitude && (
-            <span className="absolute right-0.75 z-30">
+            <span className="absolute top-0.75 right-0.75 z-30 sm:top-1.25 sm:right-1.25">
               <Button
                 onClick={(e) => {
                   e.preventDefault();
