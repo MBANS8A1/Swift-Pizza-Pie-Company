@@ -32,8 +32,6 @@ function Order() {
     cart,
   } = order;
 
-  console.log(priority);
-
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
@@ -71,8 +69,8 @@ function Order() {
             key={item.pizzaId}
             isLoadingIngredients={fetcher.state === 'loading'}
             ingredients={
-              fetcher.data?.find((foodEl) => foodEl.id === item.pizzaId)
-                .ingredients
+              fetcher?.data?.find((foodEl) => foodEl.id === item.pizzaId)
+                ?.ingredients ?? []
             }
           />
         ))}
